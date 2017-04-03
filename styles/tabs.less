@@ -1,0 +1,108 @@
+@tab-radius: 3px;
+@modified-icon-width: 8px;
+@tab-skew: 30deg;
+@tab-top-padding: 0;
+@tab-bottom-border-height: 0;
+@tab-border: 1px solid @tab-border-color;
+@tab-bar-bottom-border-color: #111;
+@tab-max-width: 160px;
+@close-icon-height: 16px;
+
+.tab-bar {
+  height: @tab-height + @tab-top-padding + @tab-bottom-border-height;
+  background: @tab-bar-background-color;
+  padding: 0 10px 0 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tab {
+    position: relative;
+    top: @tab-top-padding;
+    max-width: @tab-max-width;
+    height: @tab-height;
+    line-height: @tab-height;
+    padding: 0 1rem;
+    margin: 0 0 0 0;
+    color: @text-color;
+
+    transition: color .1s ease-in;
+    border: none;
+
+    .close-icon {
+      top: calc(@tab-height / 2 - @close-icon-height / 2);
+      text-align: center;
+      border-radius: 2px;
+      cursor: pointer;
+      right: 6px;
+      z-index: 3;
+      width: @close-icon-height;
+      height: @close-icon-height;
+      line-height: @close-icon-height;
+      color: @text-color;
+
+      &:hover {
+        background: #F2683E;
+        color: #fff;
+      }
+      &:active {
+        color: #e0e0e0;
+      }
+    }
+
+    &.modified:not(:hover) .close-icon {
+      border-color: #F2683E;
+      top: @tab-height/2 - @modified-icon-width/2 + 1px;
+      width: @modified-icon-width;
+      height: @modified-icon-width;
+    }
+
+    &.modified:hover .close-icon {
+      color: #F2683E;
+    }
+
+    .title {
+      position: relative;
+      z-index: 1;
+      margin-top: -@tab-top-padding;
+      padding-top: @tab-top-padding;
+      padding-right: 10px;
+    }
+  }
+
+  .tab.active {
+    z-index: 1;
+    color: @text-color-highlight;
+    box-shadow: none!important;
+    background-image: none!important;
+    background: @input-background-color;
+
+    .close-icon {
+      color: @text-color;
+    }
+  }
+
+  .tab:hover {
+    color: @text-color-highlight;
+  }
+
+  .tab.active:hover .close-icon {
+    color: @text-color;
+
+    &:hover {
+      color: inherit;
+    }
+  }
+
+  .placeholder {
+    height: @tab-height + @tab-top-padding + @tab-bottom-border-height;
+    margin-left: -9px; // center between tabs
+    pointer-events: none;
+    &:after {
+      top: @tab-height + @tab-top-padding + @tab-bottom-border-height - 2px;
+    }
+  }
+}

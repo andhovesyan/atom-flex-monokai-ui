@@ -1,0 +1,25 @@
+{
+  "name": "flex-monokai",
+  "theme": "ui",
+  "version": "0.0.2",
+  "description": "Atom Flex Monokai Theme",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andhovesyan/atom-flex-monokai-ui.git"
+  },
+  "engines": {
+    "atom": ">0.40.0"
+  },
+  "bugs": {
+    "url": "https://github.com/andhovesyan/atom-flex-monokai-ui/issues"
+  },
+  "homepage": "https://github.com/andhovesyan/atom-flex-monokai-ui#readme",
+  "keywords": [
+    "atom",
+    "monokai",
+    "flex",
+    "theme"
+  ],
+  "author": "Andranik Hovesyan <andranik@hovesyan.pro>"
+}
